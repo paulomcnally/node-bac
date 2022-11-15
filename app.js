@@ -1,9 +1,8 @@
 require('dotenv').config()
 const puppeteer = require('puppeteer');
 
-
 (async () => {
-  const browser = await puppeteer.launch({headless: true});
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   await page.setCacheEnabled(false)
