@@ -1,5 +1,7 @@
 # node-bac
 
+Node JS module that allows obtaining the amount and account of BAC Nicaragua.
+
 ## Install
 
 ```bash
