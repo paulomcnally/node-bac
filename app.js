@@ -1,9 +1,14 @@
 require('dotenv').config()
 const puppeteer = require('puppeteer');
 
+
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
+
+  await page.setCacheEnabled(false)
+  await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+  await page.setDefaultNavigationTimeout(0);
 
   // LOGIN
   const login = {
@@ -75,5 +80,5 @@ const puppeteer = require('puppeteer');
   await page.waitForSelector(logout.selectors.buttons.logout);
   await page.click(logout.selectors.buttons.logout);
 
-  // await browser.close();
+ // await browser.close();
 })();
