@@ -80,5 +80,5 @@ const puppeteer = require('puppeteer');
   await page.waitForSelector(logout.selectors.buttons.logout);
   await page.click(logout.selectors.buttons.logout);
 
- // await browser.close();
+  await browser.close();
 })();
